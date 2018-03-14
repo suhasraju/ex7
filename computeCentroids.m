@@ -26,9 +26,13 @@ centroids = zeros(K, n);
 % Note: You can use a for-loop over the centroids to compute this.
 %
 
+for k=1:K               %please implement the following lines of code on command window for better understanding
+   sorted=(idx==k) % Returns a bool vector of 1's and 0's
+   c=X(sorted,:) %sorted vector C which has all the input rows belowing to Kth class
+   m=size(c,1)   % size of sorted vector
+   centroids(k,:)= (1/m)* sum(c)
 
-
-
+end
 
 
 

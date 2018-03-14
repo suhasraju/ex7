@@ -21,6 +21,14 @@ idx = zeros(size(X,1), 1);
 % Note: You can use a for-loop over the examples to compute this.
 %
 
+m=length(X)
+for i = 1:m 
+    for k=1:K
+        euclid(1,k)=sqrt(sum((X(i,:)-centroids(k,:)).^2));      
+    end
+    [minValue, minIndex] = min(euclid);
+        idx(i,1)= minIndex;
+end
 
 
 
